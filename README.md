@@ -1,2 +1,3 @@
 # Bears-Team-1
-Add-project-description-here | Voyage-5 | chingu.io
+
+WhatsNext - A recommendation engine | Voyage-5 | chingu.io
