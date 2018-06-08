@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Header from './components/Header/Header';
 import Recommender from './components/Recommender/Recommender';
+import Landing from './components/landing';
 
 import './App.css';
 
@@ -14,6 +15,7 @@ class App extends Component {
         <div className="app">
           <Header />
           <Route exact path="/" component={Recommender} />
+          <Route exact path="/landing" component={Landing} />
         </div>
       </Router>
     );
