@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+}
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/****************** BGs STYLES ****************/
+.landing-bgs {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing-bg-1 {
+  background-color: #ff5b42;
+  width: 33.33%;
+}
+
+.landing-bg-2 {
+  background-color: #42b5b3;
+  width: 33.33%;
+}
+
+.landing-bg-3 {
+  background-color: #ede06d;
+  width: 33.33%;
+}
+
+/****************** IMGS STYLES ****************/
+.landing-imgs {
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 0;
+  width: 80%;
+}
+
+.landing-img-1 {
+}
+
+.landing-img-2 {
+  margin-top: 10%;
+}
+
+.landing-img-3 {
+}
+
+/****************** SVG TEXT STYLES ****************/
+.landing-svg-texts {
+  letter-spacing: 0.3em;
+}
+
+.landing-svg-text-1 {
+}
+
+.landing-svg-text-2 {
+}
+
+.landing-svg-text-3 {
+}
+
+/****************** INPUTS STYLES ****************/
+.landing-inputs {
+  height: 3em;
+}
+
+.landing-input-1 {
+  margin-top: 30%;
+}
+
+.landing-input-2 {
+  margin-top: 20%;
+}
+
+.landing-input-3 {
+  margin-top: 30%;
+}
