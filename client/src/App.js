@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-
 // import { Provider } from 'react-redux';
 
-import Login from './components/login';
+import Header from './components/Header/Header';
+import Recommender from './components/Recommender/Recommender';
 import Landing from './components/landing';
 
 import './App.css';
@@ -13,9 +13,9 @@ class App extends Component {
     return (
       <Router>
         <div className="app">
-          {/* <Route exact path="/" component={Landing} />
-          <Route exact path="/login" component={Login} /> */}
-          <Landing />
+          <Header />
+          <Route exact path="/" component={Recommender} />
+          <Route exact path="/landing" component={Landing} />
         </div>
       </Router>
     );

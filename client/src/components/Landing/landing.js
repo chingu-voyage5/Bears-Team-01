@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import tvSVG from "../assets/tvSVG";
-import bookSVG from "../assets/bookSVG";
-import movieSVG from "../assets/movieSVG";
+import tvSVG from "./assets/tvSVG";
+import bookSVG from "./assets/bookSVG";
+import movieSVG from "./assets/movieSVG";
 import "./landing.css";
 
 export default class Landing extends Component {
