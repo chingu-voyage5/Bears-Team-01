@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class InputPanel extends Component {
   render() {
-    return <div>Input Panel</div>;
+    return <div className="input-panel panel">Input Panel</div>;
   }
 }
 
