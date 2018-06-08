@@ -48,6 +48,7 @@ body {
 
 .app {
   background-color: var(--background-grey);
+  padding: 1.5em;
 }
 
 nav.header {
@@ -55,7 +56,6 @@ nav.header {
   justify-content: space-between;
   align-items: center;
   height: 3.5em;
-  padding: 1.5em;
 }
 nav.header h1 {
   flex: 5;
