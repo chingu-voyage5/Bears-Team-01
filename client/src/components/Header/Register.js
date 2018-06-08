@@ -47,7 +47,7 @@ class Login extends Component {
     return (
       <div>
         <button className="btn btn-info" onClick={this.openModal}>
-          Sign In
+          Sign Up
         </button>
         <Modal
           isOpen={this.state.modalIsOpen}
@@ -56,8 +56,20 @@ class Login extends Component {
           contentLabel="Example Modal"
         >
           <form className="login">
-            <h1 className="display-4 text-center">Sign In</h1>
+            <h1 className="display-4 text-center">Sign Up</h1>
 
+            <div className="form-group">
+              <input
+                className="form-control form-control-lg"
+                placeholder="name"
+              />
+            </div>
+            <div className="form-group">
+              <input
+                className="form-control form-control-lg"
+                placeholder="username"
+              />
+            </div>
             <div className="form-group">
               <input
                 className="form-control form-control-lg"
@@ -73,7 +85,7 @@ class Login extends Component {
             <div className="form-group">
               <button className="btn btn-info" type="submit">
                 {' '}
-                Sign In!
+                Register!
               </button>
             </div>
           </form>
