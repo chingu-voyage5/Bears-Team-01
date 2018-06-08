@@ -6,13 +6,15 @@ const keys = require('./config/keys');
 const bodyParser = require('body-parser');
 const users = require('./routes/api/users');
 
+// require('dotenv').config(); // ! Testing NODE_ENV=production locally
+
 const app = express();
 app.use(morgan('dev'));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
+app.get('/test', (req, res) => {
   res.send(keys.testKey);
 });
 
@@ -28,7 +30,6 @@ app.use(passport.initialize());
 require('./config/passport')(passport);
 
 app.use('/api/users', users);
-
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
   const path = require('path');
