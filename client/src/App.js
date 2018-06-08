@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 // import { Provider } from 'react-redux';
 
-import Header from './components/Header';
+import Header from './components/Header/Header';
 import Recommender from './components/Recommender';
 
 import './App.css';
@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <Router>
         <div className="app">
-          <Route path="/" component={Header} />
+          <Header />
           <Route exact path="/" component={Recommender} />
         </div>
       </Router>

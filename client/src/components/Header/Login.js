@@ -14,34 +14,25 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-export default class Login extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
       modalIsOpen: false
     };
     this.openModal = this.openModal.bind(this);
-    // this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
-
   openModal() {
     this.setState({ modalIsOpen: true });
   }
-
-  // afterOpenModal() {
-  //   // references are now sync'd and can be accessed.
-  //   this.subtitle.style.color = '#f00';
-  // }
-
   closeModal() {
     this.setState({ modalIsOpen: false });
   }
 
   render() {
     return (
-      <nav className="header">
-        <h1 className="logo">WhatsNext.Fun</h1>
+      <div>
         <button onClick={this.openModal}>Sign Up </button>
         <Modal
           isOpen={this.state.modalIsOpen}
@@ -49,13 +40,15 @@ export default class Login extends Component {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <form>
+          <form className="login form-group">
             <input placeholder="e-mail" />
             <input placeholder="name" />
             <input placeholder="password" />
           </form>
         </Modal>
-      </nav>
+      </div>
     );
   }
 }
+
+export default Login;
