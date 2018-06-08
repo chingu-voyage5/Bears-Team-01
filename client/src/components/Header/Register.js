@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
+import InputGroup from '../common/InputGroup';
 
 const customStyles = {
   content: {
@@ -30,19 +31,31 @@ class Login extends Component {
     this.state = {
       modalIsOpen: false,
       email: '',
+      name: '',
       password: '',
+      password2: '',
       errors: {}
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.onChange = this.onChange.bind(this);
   }
   openModal() {
     this.setState({ modalIsOpen: true });
   }
   closeModal() {
-    this.setState({ modalIsOpen: false });
+    this.setState({
+      modalIsOpen: false,
+      email: '',
+      name: '',
+      password: '',
+      password2: '',
+      errors: {}
+    });
   }
-
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
   render() {
     return (
       <div>
@@ -55,36 +68,34 @@ class Login extends Component {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <form className="login">
+          <form className="register">
             <h1 className="display-4 text-center">Sign Up</h1>
-
-            <div className="form-group">
-              <input
-                className="form-control form-control-lg"
-                placeholder="name"
-              />
-            </div>
-            <div className="form-group">
-              <input
-                className="form-control form-control-lg"
-                placeholder="username"
-              />
-            </div>
-            <div className="form-group">
-              <input
-                className="form-control form-control-lg"
-                placeholder="e-mail"
-              />
-            </div>
-            <div className="form-group">
-              <input
-                className="form-control form-control-lg"
-                placeholder="password"
-              />
-            </div>
+            <InputGroup
+              placeholder="e-mail"
+              name="email"
+              value={this.state.email}
+              onChange={this.onChange}
+            />
+            <InputGroup
+              placeholder="name"
+              name="name"
+              value={this.state.name}
+              onChange={this.onChange}
+            />
+            <InputGroup
+              placeholder="password"
+              name="password"
+              value={this.state.password}
+              onChange={this.onChange}
+            />
+            <InputGroup
+              placeholder="confirm password"
+              name="password2"
+              value={this.state.password2}
+              onChange={this.onChange}
+            />
             <div className="form-group">
               <button className="btn btn-info" type="submit">
-                {' '}
                 Register!
               </button>
             </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
+import InputGroup from '../common/InputGroup';
 
 const customStyles = {
   content: {
@@ -35,12 +36,21 @@ class Login extends Component {
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.onChange = this.onChange.bind(this);
   }
   openModal() {
     this.setState({ modalIsOpen: true });
   }
   closeModal() {
-    this.setState({ modalIsOpen: false });
+    this.setState({
+      modalIsOpen: false,
+      email: '',
+      password: '',
+      errors: {}
+    });
+  }
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   render() {
@@ -58,21 +68,21 @@ class Login extends Component {
           <form className="login">
             <h1 className="display-4 text-center">Sign In</h1>
 
-            <div className="form-group">
-              <input
-                className="form-control form-control-lg"
-                placeholder="e-mail"
-              />
-            </div>
-            <div className="form-group">
-              <input
-                className="form-control form-control-lg"
-                placeholder="password"
-              />
-            </div>
+            <InputGroup
+              placeholder="e-mail"
+              name="email"
+              value={this.state.email}
+              onChange={this.onChange}
+            />
+            <InputGroup
+              placeholder="password"
+              name="password"
+              type="password"
+              value={this.state.password}
+              onChange={this.onChange}
+            />
             <div className="form-group">
               <button className="btn btn-info" type="submit">
-                {' '}
                 Sign In!
               </button>
             </div>
