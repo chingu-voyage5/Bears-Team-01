@@ -48,7 +48,7 @@ body {
 
 .app {
   background-color: var(--background-grey);
-  padding: 1.5em;
+  /* padding: 1.5em; */
 }
 
 nav.header {

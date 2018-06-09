@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class BookSVG extends Component {
   render() {
@@ -11,11 +11,11 @@ export default class BookSVG extends Component {
           x="0px"
           y="0px"
           viewBox="0 0 1000 1000"
-          enable-background="new 0 0 1000 1000"
+          enableBackground="new 0 0 1000 1000"
         >
           <metadata>
-            {" "}
-            Svg Vector Icons : http://www.onlinewebfonts.com/icon{" "}
+            {' '}
+            Svg Vector Icons : http://www.onlinewebfonts.com/icon{' '}
           </metadata>
           <g>
             <g>
@@ -53,8 +53,8 @@ export default class BookSVG extends Component {
             className="landing-svg-text2 landing-svg-texts"
             x="260"
             y="600"
-            font-family="sans-serif"
-            font-size="9em"
+            fontFamily="sans-serif"
+            fontSize="9em"
             fill="#463C3C"
           >
             Books

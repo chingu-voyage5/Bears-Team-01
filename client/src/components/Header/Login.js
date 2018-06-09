@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
 import InputGroup from '../common/InputGroup';
-
+import { connect } from 'react-redux';
+import { loginUser } from '../../actions/authActions';
 const customStyles = {
   content: {
     border: '0',
@@ -49,9 +50,19 @@ class Login extends Component {
       errors: {}
     });
   }
+
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
+  onSubmit = e => {
+    e.preventDefault();
+    const currentUser = {
+      email: this.state.email,
+      password: this.state.password
+    };
+    this.props.loginUser(currentUser);
+    this.closeModal();
+  };
 
   render() {
     return (
@@ -65,7 +76,7 @@ class Login extends Component {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <form className="login">
+          <form className="login" onSubmit={this.onSubmit}>
             <h1 className="display-4 text-center">Sign In</h1>
 
             <InputGroup
@@ -93,4 +104,7 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default connect(
+  null,
+  { loginUser }
+)(Login);

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class movieSVG extends Component {
   render() {
@@ -11,11 +11,11 @@ export default class movieSVG extends Component {
           x="0px"
           y="0px"
           viewBox="0 0 1000 1000"
-          enable-background="new 0 0 1000 1000"
+          enableBackground="new 0 0 1000 1000"
         >
           <metadata>
-            {" "}
-            Svg Vector Icons : http://www.onlinewebfonts.com/icon{" "}
+            {' '}
+            Svg Vector Icons : http://www.onlinewebfonts.com/icon{' '}
           </metadata>
           <g>
             <path d="M954.6,536.8H102.4c-8.3,0-15.1-6.8-15.1-15.1v-15.4c0-8.3,6.8-15.1,15.1-15.1h852.2c8.3,0,15.1,6.8,15.1,15.1v15.4C969.7,530,962.9,536.8,954.6,536.8z" />
@@ -37,8 +37,8 @@ export default class movieSVG extends Component {
             className="landing-svg-text3 landing-svg-texts"
             x="250"
             y="800"
-            font-family="sans-serif"
-            font-size="8em"
+            fontFamily="sans-serif"
+            fontSize="8em"
             fill="#463C3C"
           >
             Movies

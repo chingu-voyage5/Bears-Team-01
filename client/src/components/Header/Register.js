@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
 import InputGroup from '../common/InputGroup';
+import { connect } from 'react-redux';
+import { registerUser } from '../../actions/authActions';
 
 const customStyles = {
   content: {
@@ -25,7 +27,7 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-class Login extends Component {
+class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -39,6 +41,7 @@ class Login extends Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
   openModal() {
     this.setState({ modalIsOpen: true });
@@ -56,6 +59,16 @@ class Login extends Component {
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
+  onSubmit(e) {
+    e.preventDefault();
+    const newUser = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+      password2: this.state.password2
+    };
+    this.props.registerUser(newUser);
+  }
   render() {
     return (
       <div>
@@ -68,7 +81,7 @@ class Login extends Component {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <form className="register">
+          <form className="register" onSubmit={this.onSubmit}>
             <h1 className="display-4 text-center">Sign Up</h1>
             <InputGroup
               placeholder="e-mail"
@@ -106,4 +119,7 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default connect(
+  null,
+  { registerUser }
+)(Register);

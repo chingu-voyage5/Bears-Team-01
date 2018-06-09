@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class tvSVG extends Component {
   render() {
@@ -33,8 +33,8 @@ export default class tvSVG extends Component {
             className="landing-svg-text1 landing-svg-texts"
             x="220"
             y="300"
-            font-family="sans-serif"
-            font-size="3.7em"
+            fontFamily="sans-serif"
+            fontSize="3.7em"
             fill="#463C3C"
           >
             Tv
@@ -43,8 +43,8 @@ export default class tvSVG extends Component {
             className="landing-svg-text1 landing-svg-texts"
             x="125"
             y="375"
-            font-family="sans-serif"
-            font-size="3.7em"
+            fontFamily="sans-serif"
+            fontSize="3.7em"
             fill="#463C3C"
           >
             Series
