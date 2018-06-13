@@ -43,6 +43,11 @@ class Register extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
+
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps.errors);
+    this.setState({ errors: nextProps.errors });
+  }
   openModal() {
     this.setState({ modalIsOpen: true });
   }
@@ -70,6 +75,7 @@ class Register extends Component {
     this.props.registerUser(newUser);
   }
   render() {
+    const { errors } = this.state;
     return (
       <div>
         <button className="btn btn-info" onClick={this.openModal}>
@@ -88,24 +94,28 @@ class Register extends Component {
               name="email"
               value={this.state.email}
               onChange={this.onChange}
+              errors={errors.email}
             />
             <InputGroup
               placeholder="name"
               name="name"
               value={this.state.name}
               onChange={this.onChange}
+              errors={errors.name}
             />
             <InputGroup
               placeholder="password"
               name="password"
               value={this.state.password}
               onChange={this.onChange}
+              errors={errors.password}
             />
             <InputGroup
               placeholder="confirm password"
               name="password2"
               value={this.state.password2}
               onChange={this.onChange}
+              errors={errors.password2}
             />
             <div className="form-group">
               <button className="btn btn-info" type="submit">
@@ -119,7 +129,12 @@ class Register extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
 export default connect(
-  null,
+  mapStateToProps,
   { registerUser }
 )(Register);

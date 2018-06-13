@@ -39,6 +39,10 @@ class Login extends Component {
     this.closeModal = this.closeModal.bind(this);
     this.onChange = this.onChange.bind(this);
   }
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps.errors);
+    this.setState({ errors: nextProps.errors });
+  }
   openModal() {
     this.setState({ modalIsOpen: true });
   }
@@ -61,10 +65,11 @@ class Login extends Component {
       password: this.state.password
     };
     this.props.loginUser(currentUser);
-    this.closeModal();
+    // this.closeModal();
   };
 
   render() {
+    const { email, password, errors } = this.state;
     return (
       <div>
         <button className="btn btn-info" onClick={this.openModal}>
@@ -82,15 +87,17 @@ class Login extends Component {
             <InputGroup
               placeholder="e-mail"
               name="email"
-              value={this.state.email}
+              value={email}
               onChange={this.onChange}
+              errors={errors.email}
             />
             <InputGroup
               placeholder="password"
               name="password"
               type="password"
-              value={this.state.password}
+              value={password}
               onChange={this.onChange}
+              errors={errors.password}
             />
             <div className="form-group">
               <button className="btn btn-info" type="submit">
@@ -104,7 +111,12 @@ class Login extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
 export default connect(
-  null,
+  mapStateToProps,
   { loginUser }
 )(Login);

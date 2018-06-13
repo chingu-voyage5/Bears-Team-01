@@ -20,13 +20,15 @@ router.get('/test', (req, res) => res.json({ msg: 'Users Works' }));
 // @access  Public
 router.post('/register', (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
+
   if (!isValid) {
     return res.status(400).json(errors);
   }
   User.findOne({ email: req.body.email }).then(user => {
     if (user) {
       errors.email = 'Email already exists';
-      return res.status(400).json({ errors });
+      console.log(errors);
+      return res.status(400).json(errors);
     } else {
       const newUser = new User({
         name: req.body.name,
@@ -52,6 +54,7 @@ router.post('/register', (req, res) => {
 // @access  Public
 router.post('/login', (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
+
   if (!isValid) {
     return res.status(400).json(errors);
   }
@@ -79,7 +82,7 @@ router.post('/login', (req, res) => {
         );
       } else {
         errors.password = 'Password incorrect';
-        return res.status(400).json({ errors });
+        return res.status(400).json(errors);
       }
     });
   });

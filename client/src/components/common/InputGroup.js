@@ -1,16 +1,20 @@
 import React from 'react';
+import classnames from 'classnames';
 
-const InputGroup = ({ name, placeholder, value, error, type, onChange }) => {
+const InputGroup = ({ name, placeholder, value, errors, type, onChange }) => {
   return (
     <div className="form-group">
       <input
-        className="form-control form-control-lg"
+        className={classnames('form-control form-control-lg', {
+          'is-invalid': errors
+        })}
         placeholder={placeholder}
         type={type}
         name={name}
         value={value}
         onChange={onChange}
       />
+      {errors && <div className="invalid-feedback">{errors}</div>}
     </div>
   );
 };
