@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+}
+.landing-container {
+  display: flex;
+  width: 100%;
+  height: calc(100% - 3.5em);
+}
+
+/****************** BGs STYLES ****************/
+.landing-bgs {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  transition: width 2s 0.1s;
+}
+
+.landing-bg-1 {
+  background-color: rgba(255, 91, 66, 0.7);
+  width: 100%;
+}
+
+.landing-bg-1:hover{
+  width: 200%;
+}
+
+.landing-bg-2 {
+  background-color: rgba(66, 181, 179, 0.75);
+  width: 100%;
+}
+
+.landing-bg-2:hover{
+  width: 200%;
+}
+
+
+.landing-bg-3 {
+  background-color: rgba(237, 224, 109, 85);
+  width: 100%;
+}
+
+.landing-bg-3:hover{
+  width: 200%;
+}
+
+/****************** IMGS STYLES ****************/
+.landing-imgs {
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 0;
+  width: 80%;
+  cursor: pointer;
+}
+
+.landing-img-1 {
+}
+
+.landing-img-2 {
+  margin-top: 10%;
+}
+
+.landing-img-3 {
+}
+
+/****************** SVG TEXT STYLES ****************/
+.landing-svg-texts {
+  letter-spacing: 0.3em;
+}
+
+.landing-svg-text-1 {
+}
+
+.landing-svg-text-2 {
+}
+
+.landing-svg-text-3 {
+}
+
+/****************** INPUTS STYLES ****************/
+.landing-inputs {
+  height: 3em;
+}
+
+.landing-input-1 {
+  margin-top: 30%;
+}
+
+.landing-input-2 {
+  margin-top: 20%;
+}
+
+.landing-input-3 {
+  margin-top: 30%;
+}

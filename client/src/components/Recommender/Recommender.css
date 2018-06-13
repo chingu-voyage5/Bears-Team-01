@@ -1,0 +1,27 @@
+:root {
+  --background-grey: #f1f1f1;
+  --theme-color-light: #42b5b3;
+  --theme-color-dark: #1b5b5a;
+  --text-color: #1b5b5a; /*same as theme-color-dark*/
+}
+
+.recommender {
+  width: 100%;
+  height: calc(100% - 3.5em);
+  display: flex;
+  justify-content: center;
+  padding: 1.5em;
+}
+
+.recommender .panel {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--theme-color-dark);
+  border-radius: 10px;
+}
+
+.recommender .panel:nth-child(2) {
+  margin: 0 1.5em;
+}

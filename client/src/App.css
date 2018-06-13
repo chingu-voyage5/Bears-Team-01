@@ -1,0 +1,71 @@
+/*Resets start*/
+:root {
+  --background-grey: #f1f1f1;
+  --theme-color-light: #42b5b3;
+  --theme-color-dark: #1b5b5a;
+  --text-color: #1b5b5a; /*same as theme-color-dark*/
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root,
+.app {
+  width: 100%;
+  height: 100%;
+}
+/*Resets end*/
+
+.app {
+  background-color: var(--background-grey);
+  /* padding: 1.5em; */
+}
+
+nav.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3.5em;
+}
+nav.header h1 {
+  flex: 5;
+}
+.test {
+  flex: 1;
+}
+
+.header .logo {
+  font-weight: bold;
+  color: var(--theme-color-light);
+  font-size: 2.5em;
+}
