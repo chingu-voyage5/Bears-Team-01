@@ -4,11 +4,14 @@ import setAuthToken from '../utils/setAuthToken';
 import jwt_decode from 'jwt-decode';
 
 export const registerUser = userData => dispatch => {
-  console.log(userData);
   axios
     .post('api/users/register', userData)
     .then(res => {
-      console.log(res.data);
+      const newUser = {
+        email: userData.email,
+        password: userData.password
+      };
+      dispatch(loginUser(newUser));
     })
     .catch(err =>
       dispatch({
@@ -19,6 +22,7 @@ export const registerUser = userData => dispatch => {
 };
 
 export const loginUser = userData => dispatch => {
+  console.log(userData);
   axios
     .post('/api/users/login', userData)
     .then(res => {
@@ -26,7 +30,6 @@ export const loginUser = userData => dispatch => {
       localStorage.setItem('jwtToken', token);
       setAuthToken(token);
       const decoded = jwt_decode(token);
-      console.log(decoded);
       dispatch(setCurrentUser(decoded));
     })
     .catch(err =>
