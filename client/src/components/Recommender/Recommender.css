@@ -5,6 +5,23 @@
   --text-color: #1b5b5a; /*same as theme-color-dark*/
 }
 
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-size: 1rem;
+  margin: 0;
+}
+
 .recommender {
   width: 100%;
   height: calc(100% - 3.5em);
@@ -18,10 +35,50 @@
   flex: 1;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  border: 2px solid var(--theme-color-dark);
+  border-radius: 10px;
+}
+
+.recommender .user-input-area {
+  width: 100%;
+  margin: 5px 5px 50px 5px;
+}
+
+.panel .user-input {
   border: 1px solid var(--theme-color-dark);
   border-radius: 10px;
+  width: 100%;
+  min-height: 50px;
+}
+
+.recommender .user-input {
+  padding: 10px;
+  font-size: larger;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.user-input:focus {
+  outline: none;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(27, 91, 90, 0.5);
 }
 
 .recommender .panel:nth-child(2) {
   margin: 0 1.5em;
+}
+
+.user-input-area .user-input-suggestions {
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+
+.user-input-area .suggestion-item {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.suggestion-item .thumbnail {
+  height: 50px;
 }
