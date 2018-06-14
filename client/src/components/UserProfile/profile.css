@@ -1,23 +1,26 @@
 .UserProfile,
-.row-top {
-  height: 100vh;
+.userContainer {
+  height: 90vh;
 }
-.owns {
-  height: 80vh;
+.userInfo {
+  height: 15vh;
+}
+.userLeftColumn {
+  margin-top: 20px;
+  height: 70vh;
 }
 
-.red {
-  background-color: red;
+.userCarosel {
+  height: 20vh;
 }
-.green {
-  background-color: green;
+.userRightColumn {
+  margin-top: 20px;
+  height: 70vh;
 }
-.blue {
-  background-color: blue;
+.userH1 {
+  font-size: 2.5em;
+  margin-bottom: 1rem !important;
 }
-.orange {
-  background-color: orange;
-}
-.yellow {
-  background-color: yellow;
+.userImageContainer {
+  max-height: 80%;
 }

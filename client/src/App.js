@@ -8,6 +8,7 @@ import jwt_decode from 'jwt-decode';
 import Header from './components/Header/Header';
 import Recommender from './components/Recommender/Recommender';
 import Landing from './components/Landing/Landing';
+import UserProfile from './components/UserProfile/UserProfile';
 
 import './App.css';
 
@@ -32,6 +33,7 @@ class App extends Component {
           <Header />
           <Route exact path="/" component={Recommender} />
           <Route exact path="/landing" component={Landing} />
+          <Route exact path="/profile" component={UserProfile} />
         </div>
       </Router>
     );
