@@ -4,7 +4,7 @@ import BookSVG from './assets/bookSVG';
 import MovieSVG from './assets/movieSVG';
 import './landing.css';
 
-export default class Landing extends Component {
+class Landing extends Component {
   render() {
     return (
       <div className="landing-container">
@@ -30,3 +30,4 @@ export default class Landing extends Component {
     );
   }
 }
+export default Landing;
