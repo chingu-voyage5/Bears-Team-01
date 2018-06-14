@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import throttle from 'lodash/throttle';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { setSuggestions } from '../../../actions/bookActions';
+import {
+  setSuggestions,
+  setSearchInAction
+} from '../../../actions/bookActions';
+import get from 'lodash/get';
 class InputPanel extends Component {
   state = { userInput: '' };
 
@@ -19,12 +23,24 @@ class InputPanel extends Component {
 
   render() {
     return (
-      <div className="input-panel panel">
+      <div
+        className={`input-panel panel ${
+          this.props.book.isSIA ? 'searching' : 'not-searching'
+        }`}
+      >
         <div className="user-input-area">
           <input
-            className="user-input"
+            className="user-input-box"
             type="text"
             placeholder="Enter your favorite book"
+            onFocus={() => {
+              this.props.setSearchInAction(true);
+            }}
+            onBlur={() => {
+              this.props.setSearchInAction(false);
+              this.props.setSuggestions([]);
+              this.setState({ userInput: '' });
+            }}
             onChange={e => this.handleOnChange(e)}
             value={this.state.userInput}
           />
@@ -34,7 +50,12 @@ class InputPanel extends Component {
                 <li key={book.id} className="suggestion-item">
                   <img
                     className="thumbnail"
-                    src={book.volumeInfo.imageLinks.smallThumbnail}
+                    src={get(
+                      book,
+                      'volumeInfo.imageLinks.smallThumbnail',
+                      'https://cdn.pixabay.com/photo/2018/01/03/09/09/book-3057901_960_720.png'
+                    )}
+                    alt="Book Cover"
                   />
                   <h4 className="title">{book.volumeInfo.title}</h4>
                 </li>
@@ -42,6 +63,7 @@ class InputPanel extends Component {
             })}
           </ul>
         </div>
+        <div className="background-fader" />
       </div>
     );
   }
@@ -53,5 +75,5 @@ function mapStateToProps({ book }) {
 
 export default connect(
   mapStateToProps,
-  { setSuggestions }
+  { setSuggestions, setSearchInAction }
 )(InputPanel);

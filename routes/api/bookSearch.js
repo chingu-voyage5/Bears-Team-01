@@ -9,7 +9,9 @@ module.exports = app => {
           req.query.query
         }&maxResults=5&orderBy=relevance&key=${keys.googleBooksKey}`
       );
-      console.log(result.data.volumeInfo);
+      result.data.items.forEach(item => {
+        console.log(item.volumeInfo.imageLinks);
+      });
       res.send(result.data);
     } catch (e) {
       console.log(e);
