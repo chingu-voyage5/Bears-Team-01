@@ -5,12 +5,30 @@
   --text-color: #1b5b5a; /*same as theme-color-dark*/
 }
 
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-size: 1rem;
+  margin: 0;
+}
+
 .recommender {
   width: 100%;
   height: calc(100% - 3.5em);
   display: flex;
   justify-content: center;
   padding: 1.5em;
+  min-width: 0; /* flexbox fix */
 }
 
 .recommender .panel {
@@ -18,10 +36,88 @@
   flex: 1;
   display: flex;
   justify-content: center;
-  border: 1px solid var(--theme-color-dark);
+  align-items: flex-start;
+  border: 2px solid var(--theme-color-dark);
   border-radius: 10px;
+  min-width: 0; /* flexbox fix */
 }
 
 .recommender .panel:nth-child(2) {
   margin: 0 1.5em;
+}
+
+.input-panel {
+  position: relative;
+}
+
+.user-input-area {
+  width: 100%;
+  z-index: 9999;
+  margin: 5px;
+  min-width: 0; /* flexbox fix */
+}
+
+.panel .user-input-box {
+  border: 1px solid var(--theme-color-dark);
+  border-radius: 10px;
+  width: 100%;
+  min-height: 50px;
+  padding: 10px;
+  font-size: larger;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.user-input-box:focus {
+  outline: none;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(27, 91, 90, 0.5);
+}
+
+.user-input-suggestions {
+  padding-top: 10px;
+  margin-bottom: 10px;
+  background-color: var(--background-grey);
+}
+
+.suggestion-item {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: transform 0.3s ease-in-out;
+}
+
+.suggestion-item:hover {
+  transform: scale(1.1);
+}
+
+.suggestion-item .thumbnail {
+  height: 50px;
+}
+
+.suggestion-item .title {
+  margin-left: 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.background-fader {
+  filter: blur(0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.searching .background-fader {
+  display: block;
+}
+
+.not-searching .background-fader {
+  display: none;
 }
