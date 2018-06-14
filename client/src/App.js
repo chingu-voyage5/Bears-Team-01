@@ -7,7 +7,7 @@ import jwt_decode from 'jwt-decode';
 // import { Provider } from 'react-redux';
 import Header from './components/Header/Header';
 import Recommender from './components/Recommender/Recommender';
-import Landing from './components/Landing/landing';
+import Landing from './components/Landing/Landing';
 
 import './App.css';
 

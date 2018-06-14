@@ -36,7 +36,8 @@ class Register extends Component {
       name: '',
       password: '',
       password2: '',
-      errors: {}
+      errors: {},
+      registered: false
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -49,8 +50,13 @@ class Register extends Component {
     this.setState({ errors: nextProps.errors });
   }
   openModal() {
-    this.setState({ modalIsOpen: true });
+    this.setState({
+      modalIsOpen: true,
+      errors: {}
+    });
   }
+  
+
   closeModal() {
     this.setState({
       modalIsOpen: false,
@@ -74,6 +80,7 @@ class Register extends Component {
     };
     this.props.registerUser(newUser);
   }
+
   render() {
     const { errors } = this.state;
     return (

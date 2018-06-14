@@ -40,11 +40,16 @@ class Login extends Component {
     this.onChange = this.onChange.bind(this);
   }
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps.errors);
-    this.setState({ errors: nextProps.errors });
+    this.setState({
+      errors: nextProps.errors
+    });
   }
+
   openModal() {
-    this.setState({ modalIsOpen: true });
+    this.setState({
+      modalIsOpen: true,
+      errors: {}
+    });
   }
   closeModal() {
     this.setState({
@@ -65,7 +70,6 @@ class Login extends Component {
       password: this.state.password
     };
     this.props.loginUser(currentUser);
-    // this.closeModal();
   };
 
   render() {
