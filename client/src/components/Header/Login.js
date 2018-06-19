@@ -75,18 +75,16 @@ class Login extends Component {
   render() {
     const { email, password, errors } = this.state;
     return (
-      <div>
-        <button className="btn btn-info" onClick={this.openModal}>
-          Sign In
-        </button>
+      <div className="login loggedIn">
+        <button onClick={this.openModal}>Sign In</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <form className="login" onSubmit={this.onSubmit}>
-            <h1 className="display-4 text-center">Sign In</h1>
+          <form className="login-form" onSubmit={this.onSubmit}>
+            <h1>Sign In</h1>
 
             <InputGroup
               placeholder="e-mail"
@@ -103,8 +101,8 @@ class Login extends Component {
               onChange={this.onChange}
               errors={errors.password}
             />
-            <div className="form-group">
-              <button className="btn btn-info" type="submit">
+            <div className="auth-submit-container">
+              <button className="auth-submit-button" type="submit">
                 Sign In!
               </button>
             </div>

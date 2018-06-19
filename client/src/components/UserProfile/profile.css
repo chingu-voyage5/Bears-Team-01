@@ -1,26 +1,19 @@
-.UserProfile,
-.userContainer {
-  height: 90vh;
+.userProfile {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
 }
-.userInfo {
-  height: 15vh;
+.profile-top-container {
+  display: flex;
+  flex: 2;
 }
-.userLeftColumn {
-  margin-top: 20px;
-  height: 70vh;
+.profile-bottom-container {
+  display: flex;
+  flex: 1;
 }
-
-.userCarosel {
-  height: 20vh;
+.profile-left-column {
+  flex: 1;
 }
-.userRightColumn {
-  margin-top: 20px;
-  height: 70vh;
-}
-.userH1 {
-  font-size: 2.5em;
-  margin-bottom: 1rem !important;
-}
-.userImageContainer {
-  max-height: 80%;
+.profile-right-column {
+  flex: 2;
 }

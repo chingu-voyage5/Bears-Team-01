@@ -7,30 +7,18 @@ import UserRecommended from './UserRecommended';
 class UserProfile extends Component {
   render() {
     return (
-      <div className="UserProfile">
-        <div className="container userContainer">
-          <div className="row">
-            <div className="col-md-4 userLeftColumn">
-              <UserOwns />
-            </div>
-            <div className="col-md-8 userRightColumn">
-              <div className="row">
-                <div className="col-md-12 userInfo">
-                  <UserInfo />
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-12 userRecommended">
-                  <UserRecommended />
-                </div>
-              </div>
-            </div>
+      <div className="userProfile">
+        <div className="profile-top-container">
+          <div className="profile-left-column">
+            <UserOwns />
           </div>
-          <div className="row">
-            <div className="col-md-12 userCarosel">
-              <UserCarosel />
-            </div>
+          <div className="profile-right-column">
+            <UserInfo />
+            <UserRecommended />
           </div>
+        </div>
+        <div className="profile-bottom-container">
+          <UserCarosel />
         </div>
       </div>
     );

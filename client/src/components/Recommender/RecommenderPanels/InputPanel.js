@@ -16,6 +16,7 @@ class InputPanel extends Component {
   };
 
   handleSuggestionItemOnClick = book => {
+    console.log(book);
     this.props.submitInputToPanel(book.id);
   };
 
