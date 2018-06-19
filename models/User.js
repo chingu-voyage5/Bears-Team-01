@@ -17,6 +17,47 @@ const UserSchema = new Schema({
   icon: {
     type: String
   },
+  owned: {
+    books: [
+      {
+        title: {
+          type: String,
+          required: true
+        },
+
+        id: {
+          type: String,
+          required: true
+        }
+      }
+    ],
+    movies: [
+      {
+        title: {
+          type: String,
+          required: true
+        },
+
+        id: {
+          type: String,
+          required: true
+        }
+      }
+    ],
+    tv: [
+      {
+        title: {
+          type: String,
+          required: true
+        },
+
+        id: {
+          type: String,
+          required: true
+        }
+      }
+    ]
+  },
   date: {
     type: Date,
     default: Date.now
