@@ -9,12 +9,13 @@ module.exports = app => {
           req.query.query
         }&maxResults=5&orderBy=relevance&key=${keys.googleBooksKey}`
       );
-      result.data.items.forEach(item => {
-        console.log(item.volumeInfo.imageLinks);
-      });
       res.send(result.data);
     } catch (e) {
       console.log(e);
     }
+  });
+
+  app.post('/api/book_panel_submit', async (req, res) => {
+    console.log(req.body);
   });
 };

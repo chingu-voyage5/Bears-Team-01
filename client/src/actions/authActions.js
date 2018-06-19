@@ -22,7 +22,6 @@ export const registerUser = userData => dispatch => {
 };
 
 export const loginUser = userData => dispatch => {
-  console.log(userData);
   axios
     .post('/api/users/login', userData)
     .then(res => {

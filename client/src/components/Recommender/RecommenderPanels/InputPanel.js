@@ -4,7 +4,8 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import {
   setSuggestions,
-  setSearchInAction
+  setSearchInAction,
+  submitInputToPanel
 } from '../../../actions/bookActions';
 import get from 'lodash/get';
 class InputPanel extends Component {
@@ -14,12 +15,16 @@ class InputPanel extends Component {
     this.setState({ userInput: e.target.value }, () => this.getHints());
   };
 
+  handleSuggestionItemOnClick = book => {
+    this.props.submitInputToPanel(book.id);
+  };
+
   getHints = throttle(async () => {
     const results = await axios.get(
       `/api/book_search?query=${this.state.userInput.trim()}`
     );
     this.props.setSuggestions(results.data.items);
-  }, 500);
+  }, 1000);
 
   render() {
     return (
@@ -47,7 +52,14 @@ class InputPanel extends Component {
           <ul className="user-input-suggestions">
             {this.props.book.suggestionItems.map(book => {
               return (
-                <li key={book.id} className="suggestion-item">
+                <li
+                  key={book.id}
+                  className="suggestion-item"
+                  onMouseDown={e => {
+                    this.handleSuggestionItemOnClick(book);
+                    this.props.setSearchInAction(false);
+                  }}
+                >
                   <img
                     className="thumbnail"
                     src={get(
@@ -75,5 +87,5 @@ function mapStateToProps({ book }) {
 
 export default connect(
   mapStateToProps,
-  { setSuggestions, setSearchInAction }
+  { setSuggestions, setSearchInAction, submitInputToPanel }
 )(InputPanel);

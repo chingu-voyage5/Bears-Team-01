@@ -30,7 +30,7 @@ app.use(passport.initialize());
 require('./config/passport')(passport);
 
 app.use('/api/users', users);
-require('./routes/api/bookSearch')(app);
+require('./routes/api/book')(app);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
