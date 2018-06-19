@@ -1,3 +1,5 @@
+/*/////////////////// General Layout ///////////////////*/
+
 .userProfile {
   display: flex;
   height: 100%;
@@ -16,4 +18,97 @@
 }
 .profile-right-column {
   flex: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
 }
+
+/*/////////////////// Books Owned ///////////////////*/
+
+.user-owns-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 12px;
+}
+.user-owns-title {
+  flex: 1 1 100%;
+  align-self: center;
+  text-align: center;
+  border-bottom: 2px solid black;
+}
+.user-owns-image-container {
+  flex: 1 1 50%;
+}
+.user-owns-image-container img {
+  max-width: 90%;
+}
+.owned-title {
+  text-align: center;
+}
+
+/*/////////////////// Contact Info ///////////////////*/
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.user-info-title {
+  flex: 1;
+}
+.user-info-container {
+  flex: 3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.user-info-left {
+  flex: 2;
+}
+.user-info-right {
+  flex: 1;
+  display: flex;
+}
+
+/*/////////////////// We Recommend ///////////////////*/
+
+.userRecommended {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+.user-recommended-container {
+  flex: 2;
+  display: flex;
+}
+.user-image-container,
+.recommended-title,
+.user-r {
+  flex: 1;
+}
+.user-summary-container {
+  flex: 2;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.user-image-container img {
+  flex: 0 0 50%;
+  max-width: 100%;
+}
+.user-r {
+  flex: 1;
+}
+.user-recommended-description {
+  flex: 3;
+  overflow: scroll;
+}
+.user-r h4 {
+  margin: 0;
+}
+
+/*/////////////////// Recommendation Carousel ///////////////////*/

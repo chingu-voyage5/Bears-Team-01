@@ -3,6 +3,7 @@ import UserOwns from './UserOwns';
 import UserCarosel from './UserCarosel';
 import UserInfo from './UserInfo';
 import UserRecommended from './UserRecommended';
+import './profile.css';
 
 class UserProfile extends Component {
   render() {
