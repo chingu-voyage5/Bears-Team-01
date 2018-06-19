@@ -1,5 +1,7 @@
 const axios = require('axios');
 const keys = require('../../config/keys');
+const passport = require('passport');
+const amazon = require('amazon-product-api');
 
 module.exports = app => {
   app.get('/api/book_search', async (req, res, next) => {
@@ -15,7 +17,11 @@ module.exports = app => {
     }
   });
 
-  app.post('/api/book_panel_submit', async (req, res) => {
-    console.log(req.body);
-  });
+  app.post(
+    '/api/book_panel_submit',
+    passport.authenticate('jwt', { session: false }),
+    async (req, res) => {
+      console.log(req.user);
+    }
+  );
 };
