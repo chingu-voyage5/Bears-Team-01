@@ -55,7 +55,6 @@ class Register extends Component {
       errors: {}
     });
   }
-  
 
   closeModal() {
     this.setState({
@@ -84,18 +83,16 @@ class Register extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div>
-        <button className="btn btn-info" onClick={this.openModal}>
-          Sign Up
-        </button>
+      <div className="register loggedIn">
+        <button onClick={this.openModal}>Sign Up</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <form className="register" onSubmit={this.onSubmit}>
-            <h1 className="display-4 text-center">Sign Up</h1>
+          <form className="login-form" onSubmit={this.onSubmit}>
+            <h1>Sign Up</h1>
             <InputGroup
               placeholder="e-mail"
               name="email"
@@ -124,8 +121,8 @@ class Register extends Component {
               onChange={this.onChange}
               errors={errors.password2}
             />
-            <div className="form-group">
-              <button className="btn btn-info" type="submit">
+            <div className="auth-submit-container">
+              <button className="auth-submit-button" type="submit">
                 Register!
               </button>
             </div>

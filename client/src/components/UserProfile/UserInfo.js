@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './profile.css';
 
 class UserInfo extends Component {
   render() {
     const { user } = this.props.auth;
     return (
-      <div className="UserInfo">
-        <h1 className="userH1">Contact Information</h1>
-        <div className="row">
-          <div className="col-md-6">
+      <div className="userInfo">
+        <div className="user-info-title">
+          <h3>Contact Information</h3>
+        </div>
+        <div className="user-info-container">
+          <div className="user-info-left">
             <p>Name: {user.name}</p>
             <p>Email: {user.email}</p>
           </div>
-          <div className="col-md-6">
-            <button className="btn btn-warning">Change Password</button>
+          <div className="user-info-right">
+            <button>Change Password</button>
           </div>
         </div>
       </div>

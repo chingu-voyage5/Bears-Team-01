@@ -3,9 +3,9 @@ import classnames from 'classnames';
 
 const InputGroup = ({ name, placeholder, value, errors, type, onChange }) => {
   return (
-    <div className="form-group">
+    <div className="form-div">
       <input
-        className={classnames('form-control form-control-lg', {
+        className={classnames('form-control', {
           'is-invalid': errors
         })}
         placeholder={placeholder}

@@ -13,13 +13,13 @@ class Header extends Component {
   render() {
     const { isAuthenticated, user } = this.props.auth;
     const notLoggedIn = (
-      <div className="btn-group">
+      <div className="login-container">
         <Login />
         <Register />
       </div>
     );
     const loggedIn = (
-      <div className="btn-group">
+      <div>
         <button className="btn btn-danger" onClick={this.logOut}>
           Log Out
         </button>

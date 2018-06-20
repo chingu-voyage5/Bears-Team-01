@@ -1,6 +1,66 @@
-.btn-info {
-  margin-right: 5px !important;
+.header .logo {
+  font-weight: bold;
+  color: var(--theme-color-light);
+  font-size: 2.5em;
 }
+
 .header {
-  padding: 1.5em;
+  padding: 0 1.5em;
+}
+
+.logo {
+  flex: 6;
+}
+nav.header {
+  display: flex;
+  align-items: center;
+  height: 3.5em;
+}
+
+.login-container {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex: 2;
+  justify-content: flex-end;
+}
+.loggedIn {
+  padding: 5px;
+}
+.login-form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+.login-form h1 {
+  flex: 2;
+  align-self: center;
+  margin: 0;
+}
+.auth-submit-container {
+  flex: 1;
+  align-self: center;
+  display: flex;
+}
+.auth-submit-button {
+  align-self: flex-end;
+}
+.form-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.form-div input {
+  width: 60%;
+  border: 1px solid black;
+  border-radius: 6px;
+  flex: 2;
+  padding: 10px;
+  margin: 5px 0;
+}
+.ReactModal__Content {
+  height: 50%;
+  display: flex;
 }
