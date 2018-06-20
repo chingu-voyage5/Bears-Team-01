@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import UserOwns from './UserOwns';
-import UserCarosel from './UserCarosel';
+import UserCarousel from './UserCarousel';
 import UserInfo from './UserInfo';
 import UserRecommended from './UserRecommended';
 import './profile.css';
@@ -19,7 +19,7 @@ class UserProfile extends Component {
           </div>
         </div>
         <div className="profile-bottom-container">
-          <UserCarosel />
+          <UserCarousel />
         </div>
       </div>
     );
