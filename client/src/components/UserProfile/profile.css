@@ -30,8 +30,10 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
+  align-content: flex-start;
   padding: 12px;
+  overflow: scroll;
 }
 .user-owns-title {
   flex: 1 1 100%;
@@ -40,13 +42,20 @@
   border-bottom: 2px solid black;
 }
 .user-owns-image-container {
-  flex: 1 1 50%;
+  width: 25%;
+  padding-top: 14px;
 }
 .user-owns-image-container img {
   max-width: 90%;
 }
 .owned-title {
   text-align: center;
+}
+@media screen and (max-width: 992px) {
+  .user-owns-image-container {
+    flex: 1 1 50%;
+    padding-top: 14px;
+  }
 }
 
 /*/////////////////// Contact Info ///////////////////*/
