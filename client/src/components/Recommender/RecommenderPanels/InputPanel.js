@@ -17,7 +17,11 @@ class InputPanel extends Component {
 
   handleSuggestionItemOnClick = book => {
     console.log(book);
-    this.props.submitInputToPanel(book.id);
+    console.log(book.volumeInfo.title);
+    this.props.submitInputToPanel(
+      get(book, 'volumeInfo.title', ''),
+      get(book, 'volumeInfo.authors[0]', '')
+    );
   };
 
   getHints = throttle(async () => {

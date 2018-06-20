@@ -19,11 +19,12 @@ export const setSearchInAction = isSIA => {
   };
 };
 
-export const submitInputToPanel = bookId => async dispatch => {
+export const submitInputToPanel = (bookName, bookAuthor) => async dispatch => {
   let res;
   try {
     res = await axios.post('/api/book_panel_submit', {
-      bookId
+      bookName,
+      bookAuthor
     });
   } catch (error) {
     console.log(error);
