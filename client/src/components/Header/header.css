@@ -14,7 +14,7 @@
 nav.header {
   display: flex;
   align-items: center;
-  height: 6vh;
+  height: 3.5em;
 }
 
 .login-container {

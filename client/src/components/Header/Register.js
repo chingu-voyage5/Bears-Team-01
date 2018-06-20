@@ -109,6 +109,7 @@ class Register extends Component {
             />
             <InputGroup
               placeholder="password"
+              type="password"
               name="password"
               value={this.state.password}
               onChange={this.onChange}
@@ -116,6 +117,7 @@ class Register extends Component {
             />
             <InputGroup
               placeholder="confirm password"
+              type="password"
               name="password2"
               value={this.state.password2}
               onChange={this.onChange}

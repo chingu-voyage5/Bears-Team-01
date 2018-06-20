@@ -2,8 +2,9 @@
 
 .userProfile {
   display: flex;
-  height: 94vh;
+  height: calc(100% - 3.5em);
   flex-direction: column;
+  padding: 15px;
 }
 .profile-top-container {
   display: flex;
@@ -21,7 +22,6 @@
   flex: 2;
   display: flex;
   flex-direction: column;
-  padding: 15px;
 }
 
 /*/////////////////// Books Owned ///////////////////*/
@@ -29,33 +29,41 @@
 .user-owns-container {
   height: 100%;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: flex-start;
   align-content: flex-start;
-  padding: 12px;
-  overflow: scroll;
+  padding-right: 14px;
 }
 .user-owns-title {
-  flex: 1 1 100%;
+  flex: 1;
+  width: 100%;
   align-self: center;
   text-align: center;
   border-bottom: 2px solid black;
 }
 .user-owns-image-container {
-  width: 25%;
   padding-top: 14px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex: 8;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
-.user-owns-image-container img {
+.user-owns-image-item {
+  padding-top: 10px;
+  max-width: 33%;
+}
+.user-owns-image-item img {
   max-width: 90%;
 }
 .owned-title {
   text-align: center;
 }
 @media screen and (max-width: 1250px) {
-  .user-owns-image-container {
-    flex: 1 1 50%;
-    padding-top: 14px;
+  .user-owns-image-item {
+    max-width: 45%;
   }
 }
 
@@ -107,7 +115,7 @@
   flex-direction: column;
 }
 .user-image-container img {
-  flex: 0 0 50%;
+  /* flex: 0 0 50%; */
   max-width: 100%;
   max-height: 100%;
 }
@@ -116,7 +124,8 @@
 }
 .user-recommended-description {
   flex: 3;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .user-r h4 {
   margin: 0;
@@ -126,6 +135,7 @@
 
 .userCarousel {
   display: flex;
+  flex: 1;
   flex-direction: column;
 }
 .user-carousel-title {
@@ -133,11 +143,41 @@
 }
 .user-carousel-image-container {
   display: flex;
-  flex: 4;
-  width: 15%;
-}
-.user-carousel-image-container img {
-  align-self: start;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 5;
+  overflow-x: scroll;
+  overflow-y: hidden;
   max-height: 100%;
-  max-width: 100%;
 }
+.user-carousel-image-item {
+  flex: 1 1 content;
+  padding: 0 10px;
+}
+.user-carousel-image-item img {
+  max-height: 90%;
+}
+/* @media screen and (max-width: 1450px) {
+  .user-carousel-image-item {
+    max-width: calc(100% / 7);
+  }
+}
+@media screen and (max-width: 1300px) {
+  .user-carousel-image-item {
+    max-width: calc(100% / 6);
+  }
+}
+@media screen and (max-width: 1100px) {
+  .user-carousel-image-item {
+    max-width: calc(100% / 5);
+  }
+}
+@media screen and (max-width: 900px) {
+  .user-carousel-image-item {
+    max-width: 25%;
+  }
+  .user-carousel-image-container {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+} */
