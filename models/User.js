@@ -74,11 +74,15 @@ const UserSchema = new Schema({
           type: String,
           required: true
         },
-        id: {
+        author: {
           type: String,
           required: true
         },
-        img: {
+        asin: {
+          type: String,
+          required: true
+        },
+        thumbnail: {
           type: String,
           required: true
         }
@@ -90,11 +94,15 @@ const UserSchema = new Schema({
           type: String,
           required: true
         },
-        id: {
+        author: {
           type: String,
           required: true
         },
-        img: {
+        asin: {
+          type: String,
+          required: true
+        },
+        thumbnail: {
           type: String,
           required: true
         }
@@ -106,11 +114,15 @@ const UserSchema = new Schema({
           type: String,
           required: true
         },
-        id: {
+        author: {
           type: String,
           required: true
         },
-        img: {
+        asin: {
+          type: String,
+          required: true
+        },
+        thumbnail: {
           type: String,
           required: true
         }
@@ -124,11 +136,15 @@ const UserSchema = new Schema({
           type: String,
           required: true
         },
-        id: {
+        author: {
           type: String,
           required: true
         },
-        img: {
+        asin: {
+          type: String,
+          required: true
+        },
+        thumbnail: {
           type: String,
           required: true
         }
@@ -140,11 +156,15 @@ const UserSchema = new Schema({
           type: String,
           required: true
         },
-        id: {
+        author: {
           type: String,
           required: true
         },
-        img: {
+        asin: {
+          type: String,
+          required: true
+        },
+        thumbnail: {
           type: String,
           required: true
         }
@@ -156,11 +176,15 @@ const UserSchema = new Schema({
           type: String,
           required: true
         },
-        id: {
+        author: {
           type: String,
           required: true
         },
-        img: {
+        asin: {
+          type: String,
+          required: true
+        },
+        thumbnail: {
           type: String,
           required: true
         }
