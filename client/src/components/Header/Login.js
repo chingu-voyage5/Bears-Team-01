@@ -10,6 +10,7 @@ const customStyles = {
     bottom: 'auto',
     minHeight: '10rem',
     left: '50%',
+    display: 'flex',
     padding: '2rem',
     position: 'fixed',
     right: 'auto',
@@ -35,9 +36,6 @@ class Login extends Component {
       password: '',
       errors: {}
     };
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-    this.onChange = this.onChange.bind(this);
   }
   componentWillReceiveProps(nextProps) {
     this.setState({
@@ -45,24 +43,24 @@ class Login extends Component {
     });
   }
 
-  openModal() {
+  openModal = () => {
     this.setState({
       modalIsOpen: true,
       errors: {}
     });
-  }
-  closeModal() {
+  };
+  closeModal = () => {
     this.setState({
       modalIsOpen: false,
       email: '',
       password: '',
       errors: {}
     });
-  }
+  };
 
-  onChange(e) {
+  onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
-  }
+  };
   onSubmit = e => {
     e.preventDefault();
     const currentUser = {

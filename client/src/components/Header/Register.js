@@ -10,6 +10,7 @@ const customStyles = {
     borderRadius: '4px',
     bottom: 'auto',
     minHeight: '10rem',
+    display: 'flex',
     left: '50%',
     padding: '2rem',
     position: 'fixed',
@@ -39,24 +40,19 @@ class Register extends Component {
       errors: {},
       registered: false
     };
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-    this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps.errors);
     this.setState({ errors: nextProps.errors });
   }
-  openModal() {
+  openModal = () => {
     this.setState({
       modalIsOpen: true,
       errors: {}
     });
-  }
+  };
 
-  closeModal() {
+  closeModal = () => {
     this.setState({
       modalIsOpen: false,
       email: '',
@@ -65,11 +61,11 @@ class Register extends Component {
       password2: '',
       errors: {}
     });
-  }
-  onChange(e) {
+  };
+  onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
-  }
-  onSubmit(e) {
+  };
+  onSubmit = e => {
     e.preventDefault();
     const newUser = {
       name: this.state.name,
@@ -78,7 +74,7 @@ class Register extends Component {
       password2: this.state.password2
     };
     this.props.registerUser(newUser);
-  }
+  };
 
   render() {
     const { errors } = this.state;

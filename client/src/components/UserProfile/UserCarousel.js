@@ -5,7 +5,7 @@ export default class userCarousel extends Component {
     return (
       <div className="userCarousel">
         <div className="user-carousel-title">
-          <h3>Your Owned Books</h3>
+          <h3>Suggestion Carousel</h3>
         </div>
         <div className="user-carousel-image-container">
           <div className="user-carousel-image-item">

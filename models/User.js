@@ -15,7 +15,8 @@ const UserSchema = new Schema({
     require: true
   },
   icon: {
-    type: String
+    type: String,
+    require: true
   },
   owned: {
     books: [

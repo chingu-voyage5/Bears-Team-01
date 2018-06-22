@@ -20,6 +20,7 @@
 }
 .profile-right-column {
   flex: 2;
+  padding: 0 30px;
   display: flex;
   flex-direction: column;
 }
@@ -79,17 +80,45 @@
 }
 .user-info-container {
   flex: 3;
+  width: 70%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: 30px;
 }
 .user-info-left {
-  flex: 2;
+  max-width: 30%;
+  max-height: 100%;
 }
 .user-info-right {
-  flex: 1;
+  width: 60%;
+  padding-left: 15px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  align-content: center;
+}
+.user-info-item {
+  padding-top: 18px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid black;
+}
+.user-info-item button {
+  float: right;
+}
+.user-info-item input {
+  width: 70%;
+}
+.user-photo {
+  max-width: 80%;
+  max-height: 80%;
+}
+.user-photo img {
+  max-height: 80%;
+  max-width: 80%;
+  border-radius: 50%;
 }
 
 /*/////////////////// We Recommend ///////////////////*/
@@ -148,36 +177,12 @@
   flex: 5;
   overflow-x: scroll;
   overflow-y: hidden;
-  max-height: 100%;
 }
 .user-carousel-image-item {
-  flex: 1 1 content;
   padding: 0 10px;
+  width: min-content;
+  height: 100%;
 }
 .user-carousel-image-item img {
-  max-height: 90%;
+  height: 100%;
 }
-/* @media screen and (max-width: 1450px) {
-  .user-carousel-image-item {
-    max-width: calc(100% / 7);
-  }
-}
-@media screen and (max-width: 1300px) {
-  .user-carousel-image-item {
-    max-width: calc(100% / 6);
-  }
-}
-@media screen and (max-width: 1100px) {
-  .user-carousel-image-item {
-    max-width: calc(100% / 5);
-  }
-}
-@media screen and (max-width: 900px) {
-  .user-carousel-image-item {
-    max-width: 25%;
-  }
-  .user-carousel-image-container {
-    overflow-x: scroll;
-    overflow-y: hidden;
-  }
-} */
