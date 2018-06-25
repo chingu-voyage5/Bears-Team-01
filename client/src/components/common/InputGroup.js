@@ -13,6 +13,7 @@ const InputGroup = ({ name, placeholder, value, errors, type, onChange }) => {
         name={name}
         value={value}
         onChange={onChange}
+        autoComplete="off"
       />
       {errors && <div className="invalid-feedback">{errors}</div>}
     </div>

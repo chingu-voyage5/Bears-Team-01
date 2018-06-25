@@ -94,6 +94,42 @@ router.post('/login', (req, res) => {
   });
 });
 
+// @route   POST api/users/update
+// @desc    Updates user information
+// @access  Private
+
+router.post('/update', (req, res) => {
+  let editedUser;
+  if (req.body.isImage) {
+    editedUser = {
+      icon: req.body.icon
+    };
+  } else {
+    editedUser = {
+      email: req.body.email,
+      name: req.body.name
+    };
+  }
+  User.findOneAndUpdate(
+    { _id: req.body.id },
+    { $set: editedUser },
+    { new: true }
+  ).then(user => {
+    const payload = {
+      id: user.id,
+      name: user.name,
+      icon: user.icon,
+      email: user.email
+    };
+    jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
+      res.json({
+        success: true,
+        token: 'Bearer ' + token
+      });
+    });
+  });
+});
+
 // @route   GET api/users/current
 // @desc    Return current user
 // @access  Private

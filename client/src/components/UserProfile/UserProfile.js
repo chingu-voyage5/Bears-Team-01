@@ -4,9 +4,11 @@ import UserCarousel from './UserCarousel';
 import UserInfo from './UserInfo';
 import UserRecommended from './UserRecommended';
 import './profile.css';
+import { connect } from 'react-redux';
 
 class UserProfile extends Component {
   render() {
+    const { user } = this.props.auth;
     return (
       <div className="userProfile">
         <div className="profile-top-container">
@@ -14,7 +16,7 @@ class UserProfile extends Component {
             <UserOwns />
           </div>
           <div className="profile-right-column">
-            <UserInfo />
+            <UserInfo user={user} />
             <UserRecommended />
           </div>
         </div>
@@ -25,5 +27,7 @@ class UserProfile extends Component {
     );
   }
 }
-
-export default UserProfile;
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+export default connect(mapStateToProps)(UserProfile);
