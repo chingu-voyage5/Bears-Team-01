@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/chingu-voyage5/Bears-Team-01#readme",
   "dependencies": {
-    "amazon-product-api": "^0.4.4",
+    "amazon-product-api": "git+https://github.com/t3chnoboy/amazon-product-api.git",
     "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",

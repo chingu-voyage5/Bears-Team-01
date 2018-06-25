@@ -101,7 +101,7 @@ class UserInfo extends Component {
         <div className="user-info-container">
           <div className="user-info-left">
             <div className="user-photo">
-              <img src={icon} />
+              <img alt="Avatar" src={icon} />
             </div>
           </div>
           <div className="user-info-right">

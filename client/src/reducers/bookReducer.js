@@ -1,7 +1,13 @@
-import { SET_INPUT_SUGGESTIONS, SET_SEARCH_IN_ACTION } from '../actions/types';
+import {
+  SET_INPUT_SUGGESTIONS,
+  SET_SEARCH_IN_ACTION,
+  GET_USER_BOOKS
+} from '../actions/types';
 
 const initialState = {
   suggestionItems: [],
+  currentList: [],
+  recommendedList: [],
   isSIA: false
 };
 export default (state = initialState, action) => {
@@ -15,6 +21,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isSIA: action.payload
+      };
+    case GET_USER_BOOKS:
+      return {
+        ...state,
+        currentList: action.payload.currentList,
+        recommendedList: action.payload.recommendedList
       };
     default:
       return state;
