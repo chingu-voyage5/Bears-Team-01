@@ -154,6 +154,7 @@ class UserInfo extends Component {
         <div className="user-info-container">
           <div className="user-info-left">
             <div className="user-photo">
+<<<<<<< HEAD
               <img src={icon} alt="This URL is broken, please try again." />
               <div className="user-img-overlay">
                 <button onClick={this.openModal}>Change</button>
@@ -175,6 +176,9 @@ class UserInfo extends Component {
                   <button type="submit">Change</button>
                 </form>
               </Modal>
+=======
+              <img alt="Avatar" src={icon} />
+>>>>>>> de14426a653745c4e622e003827ca0261963aaf1
             </div>
           </div>
           <div className="user-info-right">

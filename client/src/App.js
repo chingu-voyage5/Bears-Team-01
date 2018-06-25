@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setCurrentUser, logoutUser } from './actions/authActions';
+import { getUserBooks } from './actions/bookActions';
 import setAuthToken from './utils/setAuthToken';
 import jwt_decode from 'jwt-decode';
 // import { Provider } from 'react-redux';
@@ -19,6 +20,7 @@ class App extends Component {
       setAuthToken(localStorage.jwtToken);
       const decoded = jwt_decode(localStorage.jwtToken);
       this.props.store.dispatch(setCurrentUser(decoded));
+      this.props.store.dispatch(getUserBooks());
       const currentTime = Date.now() / 1000;
       if (decoded.exp < currentTime) {
         this.props.store.dispatch(logoutUser());

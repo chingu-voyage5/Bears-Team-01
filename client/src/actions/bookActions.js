@@ -1,7 +1,7 @@
 import {
   SET_INPUT_SUGGESTIONS,
   SET_SEARCH_IN_ACTION,
-  SUBMIT_INPUT_TO_PANEL
+  GET_USER_BOOKS
 } from './types';
 import axios from 'axios';
 
@@ -26,6 +26,17 @@ export const submitInputToPanel = (bookName, bookAuthor) => async dispatch => {
       bookName,
       bookAuthor
     });
+    dispatch({ type: GET_USER_BOOKS, payload: res.data });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getUserBooks = () => async dispatch => {
+  let res;
+  try {
+    res = await axios.get('/api/get_user_books');
+    dispatch({ type: GET_USER_BOOKS, payload: res.data });
   } catch (error) {
     console.log(error);
   }

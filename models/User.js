@@ -1,5 +1,21 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const bookStructure = {
+  title: {
+    type: String,
+    required: true
+  },
+  author: {
+    type: String
+  },
+  asin: {
+    type: String,
+    required: true
+  },
+  thumbnail: {
+    type: String
+  }
+};
 
 const UserSchema = new Schema({
   name: {
@@ -19,178 +35,13 @@ const UserSchema = new Schema({
     require: true
   },
   owned: {
-    books: [
-      {
-        title: {
-          type: String,
-          required: true
-        },
-        id: {
-          type: String,
-          required: true
-        },
-        img: {
-          type: String,
-          required: true
-        }
-      }
-    ],
-    movies: [
-      {
-        title: {
-          type: String,
-          required: true
-        },
-        id: {
-          type: String,
-          required: true
-        },
-        img: {
-          type: String,
-          required: true
-        }
-      }
-    ],
-    tv: [
-      {
-        title: {
-          type: String,
-          required: true
-        },
-        id: {
-          type: String,
-          required: true
-        },
-        img: {
-          type: String,
-          required: true
-        }
-      }
-    ]
+    books: [bookStructure]
   },
   currentList: {
-    books: [
-      {
-        title: {
-          type: String,
-          required: true
-        },
-        author: {
-          type: String,
-          required: true
-        },
-        asin: {
-          type: String,
-          required: true
-        },
-        thumbnail: {
-          type: String,
-          required: true
-        }
-      }
-    ],
-    movies: [
-      {
-        title: {
-          type: String,
-          required: true
-        },
-        author: {
-          type: String,
-          required: true
-        },
-        asin: {
-          type: String,
-          required: true
-        },
-        thumbnail: {
-          type: String,
-          required: true
-        }
-      }
-    ],
-    tv: [
-      {
-        title: {
-          type: String,
-          required: true
-        },
-        author: {
-          type: String,
-          required: true
-        },
-        asin: {
-          type: String,
-          required: true
-        },
-        thumbnail: {
-          type: String,
-          required: true
-        }
-      }
-    ]
+    books: [bookStructure]
   },
   recommendedList: {
-    books: [
-      {
-        title: {
-          type: String,
-          required: true
-        },
-        author: {
-          type: String,
-          required: true
-        },
-        asin: {
-          type: String,
-          required: true
-        },
-        thumbnail: {
-          type: String,
-          required: true
-        }
-      }
-    ],
-    movies: [
-      {
-        title: {
-          type: String,
-          required: true
-        },
-        author: {
-          type: String,
-          required: true
-        },
-        asin: {
-          type: String,
-          required: true
-        },
-        thumbnail: {
-          type: String,
-          required: true
-        }
-      }
-    ],
-    tv: [
-      {
-        title: {
-          type: String,
-          required: true
-        },
-        author: {
-          type: String,
-          required: true
-        },
-        asin: {
-          type: String,
-          required: true
-        },
-        thumbnail: {
-          type: String,
-          required: true
-        }
-      }
-    ]
+    books: [bookStructure]
   },
   date: {
     type: Date,

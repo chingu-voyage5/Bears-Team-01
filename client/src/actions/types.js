@@ -4,3 +4,4 @@ export const SET_INPUT_SUGGESTIONS = 'set_input_suggestions';
 export const SET_SEARCH_IN_ACTION = 'set_search_in_action';
 export const SUBMIT_INPUT_TO_PANEL = 'submit_input_to_panel';
 export const UPDATE_USER = 'update-user';
+export const GET_USER_BOOKS = 'get_user_books';

@@ -8,6 +8,7 @@ import {
   submitInputToPanel
 } from '../../../actions/bookActions';
 import get from 'lodash/get';
+import BookCard from './BookCard';
 class InputPanel extends Component {
   state = { userInput: '' };
 
@@ -15,13 +16,12 @@ class InputPanel extends Component {
     this.setState({ userInput: e.target.value }, () => this.getHints());
   };
 
-  handleSuggestionItemOnClick = book => {
-    console.log(book);
-    console.log(book.volumeInfo.title);
-    this.props.submitInputToPanel(
+  handleSuggestionItemOnClick = async book => {
+    const user = await this.props.submitInputToPanel(
       get(book, 'volumeInfo.title', ''),
       get(book, 'volumeInfo.authors[0]', '')
     );
+    console.log(user);
   };
 
   getHints = throttle(async () => {
@@ -81,6 +81,13 @@ class InputPanel extends Component {
           </ul>
         </div>
         <div className="background-fader" />
+        <div className="added-books-area">
+          <ul className="added-list">
+            {this.props.book.currentList.map(book => (
+              <BookCard {...book} cardType="input-card" />
+            ))}
+          </ul>
+        </div>
       </div>
     );
   }

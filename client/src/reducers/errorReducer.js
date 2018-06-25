@@ -1,5 +1,8 @@
 import { GET_ERRORS } from '../actions/types';
+<<<<<<< HEAD
 // import isEmpty from '../utils/is-empty';
+=======
+>>>>>>> de14426a653745c4e622e003827ca0261963aaf1
 
 const initialState = {};
 
